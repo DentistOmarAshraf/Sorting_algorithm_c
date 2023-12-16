@@ -17,7 +17,6 @@ void bubble_sort(int *arr, size_t size)
 		swaped = false;
 		for (i = 0 ; i < size ; i++)
 			for (j = 0 ; j < size - 1 - i ; j++)
-			{
 				if (arr[j] > arr[j + 1])
 				/*" > " operator sorting from small to big */
 				{
@@ -26,7 +25,6 @@ void bubble_sort(int *arr, size_t size)
 					arr[j + 1] = temp;
 					swaped = true;
 				}
-			}
 	} while (swaped);
 }
 
