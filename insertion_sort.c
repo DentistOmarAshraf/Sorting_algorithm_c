@@ -1,24 +1,25 @@
 #include "main.h"
-
+/**
+ * insertion_sort - sorting algo
+ * @arr: array
+ * @size: size_t
+ * Return: None
+ */
 
 void insertion_sort(int arr[], size_t size)
 {
 	size_t i, j;
-	int key, temp, ind, min;
+	int key;
 
-	for (i = 0 ; i < size ; i++)
+	for (i = 1 ; i < size ; i++)
 	{
-		min = arr[i];
-		ind = i;
-		for (j = i + 1 ; j < size ; j++)
+		key = arr[i];
+		j = i - 1;
+		while (j >= 0 && arr[j] > key)
 		{
-			if (arr[j] < min)
-			{
-				min = arr[j];
-				ind = j;
-			}
+			arr[j + 1] = arr[j];
+			j--;
 		}
-		arr[ind] = arr[i];
-		arr[i] = min;
+		arr[j + 1] = key;
 	}
 }
