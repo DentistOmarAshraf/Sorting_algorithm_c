@@ -11,23 +11,21 @@ void select_sort(int *arr, size_t size)
 {
 	size_t i, j;
 	int *new;
-	int min, n;
-	int temp;
+	int min, index;
 
 	for (i = 0 ; i < size ; i++)
 	{
-		n = i;
 		min = arr[i];
-		for (j = i ; j < size; j++)
+		index = i;
+		for (j = i + 1 ; j < size ; j++)
 		{
 			if (arr[j] < min)
 			{
 				min = arr[j];
-				n = j;
+				index = j;
 			}
 		}
-		temp = arr[i];
-		arr[i] = arr[n];
-		arr[n] = temp;
+		arr[index] = arr[i];
+		arr[i] = min;
 	}
 }
